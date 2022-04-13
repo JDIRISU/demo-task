@@ -137,6 +137,17 @@
         padding-right: 20px;
     }
     
+    .dot {
+        height: 12px;
+        width: 12px;
+        background-color: #ff5454;
+        border-radius: 12px;
+    }
+    
+    #sidebar.active .dot {
+        display: none;
+    }
+    
     .task-add {
         background-color: #edf1fb;
         border-radius: 20px;
