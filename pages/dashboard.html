@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>TeamApt DEMO TASK</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- My Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+</head>
+
+<body onload="doWork()">
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <div class="d-flex">
+                    <h3><img height="50" src="../assets/images/logomain.png"><label class="mt-2 logoText">PJ</label></h3>
+                </div>
+
+                <strong><img height="50" src="../assets/images/logomain.png"></strong>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="collect active" onclick="changeHeader('Dashboard')">
+                    <a href="#">
+                        <i class="fas fa-th-large mr-3 ml-3"></i> Dashboard
+                    </a>
+                </li>
+                <li class="collect" onclick="changeHeader('Analytics')">
+                    <a href="#">
+                        <i class="fas fa-chart-line mr-3 ml-3"></i> Analytics
+                    </a>
+                </li>
+                <li class="collect" onclick="changeHeader('Projects')">
+                    <a href="#">
+                        <i class="fas fa-folder mr-3 ml-3"></i> Projects
+                    </a>
+                </li>
+                <li class="collect" onclick="changeHeader('Tracking')">
+                    <a href="#">
+                        <i class="fas fa-hourglass-end mr-3 ml-3"></i> Tracking
+                    </a>
+                </li>
+                <li class="collect" onclick="changeHeader('History')">
+                    <a href="#">
+                        <i class="fas fa-history mr-3 ml-3"></i> History
+                    </a>
+                </li>
+                <li class="collect" onclick="changeHeader('Settings')">
+                    <a href="#">
+                        <i class="fas fa-cog mr-3 ml-3"></i> Settings
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled extras">
+                <a href="dashboard.html" class="">
+                    <div class="d-flex task-add">
+                        <div class="txt">Create new task </div><img class="mt-2" height="40" src="../assets/images/addicon.png">
+                    </div>
+                </a>
+            </ul>
+
+            <ul class="list-unstyled extras">
+                <div class="d-flex profile">
+                    <div>
+                        <img class="icons" height="50" src="../assets/images/icon/avatar-4.jpg ">
+                    </div>
+                    <div class="ml-3">
+                        <div> Finna A.</div>
+                        <small class="text-muted">finna@iksg.com</small>
+                        <i class="fas fa-angle-up text-muted ml-3"></i>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light w-100">
+                <div class="container-fluid">
+
+                    <button type="button" id="collapseIt" class="btn btn-light d-inline-block shadow">
+                        <i class="fas fa-exchange-alt"></i>
+                    </button>
+
+                    <div class="ml-5">
+                        <div class="d-flex">
+                            <div id="heading-txt">Dashboard</div>
+                            <i class="fas fa-angle-right text-muted ml-3 mr-3 mt-1"></i>
+                            <div class="text-muted fw-light">GSE Banking App </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-light d-inline-block d-lg-none ml-auto shadow" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <div class="ml-4 mt-4">
+                                    <i class="fs-1 fas fa-solid fa-comments"></i>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <div class="ml-4 mt-4">
+                                    <i class="fas fa-bell"></i>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <div class="d-flex portal ml-4">
+                                    <div>
+                                        <img class="icons" height="45" src="../assets/images/logo.png">
+                                    </div>
+                                    <div class="ml-3 mt-2 d-flex">
+                                        <div> RonasIT </div>
+                                        <i class="fas fa-angle-down text-muted mt-1 ml-3"></i>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container">
+
+                <div class="p-4 ">
+                    <div class=" d-flex row">
+                        <div class="col-lg-8 col-md-8 col-sm-6 pt-2">
+                            <div>
+                                <h2> GSE Banking app</h2>
+                            </div>
+                            <div class="d-flex">
+                                <small class="text-muted" id="total">56%</small>
+                                <div class="measure-work-light-tot mt-2 ml-3 d-flex">
+                                    <div class="measure-work-solid-tot d-flex">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-3 pt-2">
+                            <div class="text-right">
+                                <button type="button" class="btn btn-light text-muted pl-5 pr-5 pt-3 pb-3 invite-btn"> + Invite</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-3 mt-3 anti">
+                            <div class="">
+                                <div class="parent">
+                                    <img class="child-img" height="40" src="../assets/images/icon/avatar-1.jpg" />
+                                    <img class="child-img-1" height="40" src="../assets/images/icon/avatar-3.jpg" />
+                                    <img class="child-img-2" height="40" src="../assets/images/icon/avatar-4.jpg" />
+                                    <img class="child-img-3" height="40" src="../assets/images/icon/avatar-2.jpg" />
+                                    <img class="child-img-4" height="40" src="../assets/images/icon/avatar-1.jpg" />
+                                    <div class="child-img-5 p-2">
+                                        <small>+ 15</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="row d-flex">
+                        <div class="pb-4 col-lg-8 col-md-8 col-sm-12 pt-3">
+                            <div class="d-flex">
+                                April 2022 <i class="fas fa-angle-left text-muted ml-3 mt-1"></i><i class="fas fa-angle-right text-muted ml-3 mt-1"></i>
+                            </div>
+                        </div>
+
+                        <!-- <div class="pb-4 col-lg-2 col-md-2 col-sm-6 text-right">
+                        <div class=""  id="search-area">
+                            <input type="text" class="form-control" id="" placeholder="search">
+                        </div>
+                    </div> -->
+                        <div class="pb-4 col-lg-2 col-md-2 col-sm-6 text-right">
+
+                            <div class="text-right mt-3">
+                                <i class="fas fa-search text-muted" onclick="toggleSearchView()"></i>
+                            </div>
+                        </div>
+                        <div class="pb-4 col-lg-2 col-md-2 col-sm-6 ">
+                            <div class="text-right">
+                                <select class="form-select" aria-label="Default select example">
+                                            <option selected>Month</option>
+                                            <option value="JAN">January</option>
+                                            <option value="FEB">February</option>
+                                            <option value="MAR">March</option>
+                                            <option value="APR">April</option>
+                                            <option value="MAY">May</option>
+                                            <option value="JUN">June</option>
+                                            <option value="JUL">July</option>
+                                            <option value="AUG">August</option>
+                                            <option value="SEP">September</option>
+                                            <option value="OCT">October</option>
+                                            <option value="NOV">November</option>
+                                            <option value="DEC">December</option>
+                                          </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pl-4 pr-4">
+
+                    <div class="d-flex">
+                        <ul class="list-group list-group-horizontal ">
+                            <li class="list-group-item d-flex calendar-days"> <span class="text-muted pr-1">M </span><strong>04</strong></li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item d-flex calendar-days"> <span class="text-muted pr-1">T </span><strong>05</strong></li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item d-flex calendar-days"> <span class="text-muted pr-1">W </span><strong>06</strong></li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item d-flex calendar-days"> <span class="text-muted pr-1">T </span><strong>07</strong></li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item d-flex calendar-days"> <span class="text-muted pr-1">F </span><strong>08</strong></li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item d-flex calendar-days"> <span class="text-muted pr-1">S </span><strong>09</strong></li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item d-flex calendar-days"> <span class="text-muted pr-1">S </span><strong>10</strong></li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item d-flex calendar-days"> <span class="text-muted pr-1">M</span><strong>11</strong></li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item d-flex calendar-days"> <span class="text-muted pr-1">T </span><strong>12</strong></li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item d-flex calendar-days">
+                                <span class="d-flex bg-primary text-light pl-2 pr-2 rounded">W <strong class="pl-1">13</strong></span>
+                            </li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal ">
+                            <li class="list-group-item d-flex calendar-days "> <span class="text-muted pr-1 ">T </span><strong>14</strong></li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal ">
+                            <li class="list-group-item d-flex calendar-days "> <span class="text-muted pr-1 ">F </span><strong>15</strong></li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal ">
+                            <li class="list-group-item d-flex calendar-days "> <span class="text-muted pr-1 ">S </span><strong>16</strong></li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal ">
+                            <li class="list-group-item d-flex calendar-days "> <span class="text-muted pr-1 ">S </span><strong>17</strong></li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal ">
+                            <li class="list-group-item d-flex calendar-days "> <span class="text-muted pr-1 ">M </span><strong>18</strong></li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal ">
+                            <li class="list-group-item d-flex calendar-days "> <span class="text-muted pr-1 ">T </span><strong>19</strong></li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal ">
+                            <li class="list-group-item d-flex calendar-days "> <span class="text-muted pr-1 ">W </span><strong>20</strong></li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal ">
+                            <li class="list-group-item d-flex calendar-days "> <span class="text-muted pr-1 ">T </span><strong>21</strong></li>
+                        </ul>
+                    </div>
+                    <div class="d-flex work-dash">
+                        <div>
+                            <ul class="list-group list-group-flush ">
+                                <li class="list-group-item d-flex ">
+                                    <div class="staff-div shadow-sm ">
+                                        <div class="d-flex ">
+                                            <div>
+                                                <img class="icons " height="45 " src="../assets/images/icon/avatar-4.jpg ">
+                                            </div>
+                                            <div class="ml-3 profile-info ">
+                                                <div> Finna A.</div>
+                                                <small class="text-muted ">UX Designer</small>
+                                            </div>
+                                            <div class="ml-5 mt-3 ">
+                                                <i class="fas fa-ellipsis-v text-muted "></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="measure-work-light-1 mt-4 ml-4 d-flex">
+                                        <div class="measure-work-solid-1 d-flex">
+                                            <div class="circle-orange">
+                                                <div class="circle-light"></div>
+                                            </div>
+                                            <div class="m-3">Flow Swift transfer </div>
+                                        </div>
+                                        <div class="p-3 percent" id="percent">68%</div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item d-flex">
+                                    <div class="staff-div shadow-sm ">
+                                        <div class="d-flex ">
+                                            <div>
+                                                <img class="icons " height="45 " src="../assets/images/icon/avatar-2.jpg ">
+                                            </div>
+                                            <div class="ml-3 profile-info ">
+                                                <div> Emma F. </div>
+                                                <small class="text-muted ">UI Designer</small>
+                                            </div>
+                                            <div class="ml-5 mt-3 ">
+                                                <i class="fas fa-ellipsis-v text-muted "></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="measure-work-solid-6 mt-4 ml-1 d-flex">
+                                        <div class="measure-work-solid-6 d-flex">
+                                            <div class="circle-gold">
+                                                <div class="circle-light"></div>
+                                            </div>
+                                            <div class="m-3">Dasboard </div>
+                                        </div>
+                                        <div>
+                                            <div class="p-3 ml-5 percent" id="percent1">100%</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item d-flex">
+                                    <div class="staff-div shadow-sm ">
+                                        <div class="d-flex ">
+                                            <div>
+                                                <img class="icons " height="45 " src="../assets/images/icon/avatar-3.jpg ">
+                                            </div>
+                                            <div class="ml-3 profile-info ">
+                                                <div> Alex B. </div>
+                                                <small class="text-muted ">UX Analyst</small>
+                                            </div>
+                                            <div class="ml-5 mt-3 ">
+                                                <i class="fas fa-ellipsis-v text-muted "></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="shift-1">
+                                        <div class="measure-work-light-4  mt-4 ml-4 d-flex">
+                                            <div class="measure-work-solid-4 d-flex">
+                                                <div class="circle-dark">
+                                                    <div class="circle-light"></div>
+                                                </div>
+                                                <div class="m-3">User profile </div>
+                                            </div>
+                                            <div>
+                                                <div class="p-3 ml-5 percent" id="percent2">32%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item d-flex">
+                                    <div class="staff-div shadow-sm ">
+                                        <div class="d-flex ">
+                                            <div>
+                                                <img class="icons " height="45 " src="../assets/images/icon/avatar-1.jpg ">
+                                            </div>
+                                            <div class="ml-3 profile-info ">
+                                                <div> Cody D. </div>
+                                                <small class="text-muted ">UX Analyst</small>
+                                            </div>
+                                            <div class="ml-5 mt-3 ">
+                                                <i class="fas fa-ellipsis-v text-muted "></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="measure-work-light-4 mt-4 ml-4 d-flex">
+                                        <div class="measure-work-solid-4 d-flex">
+                                            <div class="circle-dark">
+                                                <div class="circle-light"></div>
+                                            </div>
+                                            <div class="m-2 pt-2">Transfers by phone number </div>
+                                        </div>
+                                        <div>
+                                            <div class="p-3 ml-5 percent" id="percent3">32%</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item d-flex">
+                                    <div class="staff-div shadow-sm ">
+                                        <div class="d-flex ">
+                                            <div>
+                                                <img class="icons " height="45 " src="../assets/images/icon/avatar-6.jpg ">
+                                            </div>
+                                            <div class="ml-3 profile-info ">
+                                                <div> Samanta G. </div>
+                                                <small class="text-muted ">Senior UI/UX Designer</small>
+                                            </div>
+                                            <div class="ml-5 mt-3 ">
+                                                <i class="fas fa-ellipsis-v text-muted "></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="measure-work-light-3 mt-4 ml-4 d-flex">
+                                        <div class="measure-work-solid-3 d-flex">
+                                            <div class="circle-sky">
+                                                <div class="circle-light"></div>
+                                            </div>
+                                            <div class="m-3">Chat bot </div>
+                                        </div>
+                                        <div>
+                                            <div class="p-3 ml-5 percent" id="percent4">77%</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item d-flex">
+                                    <div class="staff-div shadow-sm ">
+                                        <div class="d-flex ">
+                                            <div>
+                                                <img class="icons " height="45 " src="../assets/images/icon/avatar-5.jpg ">
+                                            </div>
+                                            <div class="ml-3 profile-info ">
+                                                <div> Erik F.</div>
+                                                <small class="text-muted ">UX Designer</small>
+                                            </div>
+                                            <div class="ml-5 mt-3 ">
+                                                <i class="fas fa-ellipsis-v text-muted "></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="measure-work-light-2 mt-4 ml-5 d-flex">
+                                        <div class="measure-work-solid-2 d-flex">
+                                            <div class="circle-orange">
+                                                <div class="circle-light"></div>
+                                            </div>
+                                            <div class="m-3">Transfer Analytics </div>
+                                        </div>
+                                        <div>
+                                            <div class="p-3 ml-5 percent" id="percent5">42%</div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item d-flex">
+                                    <div class="staff-div shadow-sm ">
+                                        <div class="d-flex ">
+                                            <div>
+                                                <img class="icons " height="50 " src="../assets/images/icon/avatar-7.jpeg ">
+                                            </div>
+                                            <div class="ml-3 profile-info ">
+                                                <div> Anna S.</div>
+                                                <small class="text-muted ">UI Designer</small>
+                                            </div>
+                                            <div class="ml-5 mt-3">
+                                                <i class="fas fa-ellipsis-v text-muted "></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="shift-2">
+                                        <div class="measure-work-light-5 mt-4 ml-5 d-flex">
+                                            <div class="measure-work-solid-5 d-flex">
+                                                <div class="circle-gold">
+                                                    <div class="circle-light"></div>
+                                                </div>
+                                                <div class="m-3">Settings </div>
+                                            </div>
+                                            <div>
+                                                <div class="p-3 ml-5 percent" id="percent6">41%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery - Slim version -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js " integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ " crossorigin="anonymous "></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js " integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/countupjs/1.8.5/countUp.min.js"></script>
+    <script type="text/javascript ">
+        // Script to collapse the sidebar onclick
+        $(document).ready(function() {
+            $('#collapseIt').on('click', function() {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+
+
+    <script type="text/javascript ">
+        // Script to make sidebar menus active onclick
+        var sidebar = document.getElementById("sidebar");
+        var links = sidebar.getElementsByClassName("collect");
+        for (var i = 0; i < links.length; i++) {
+            links[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", " ");
+                this.className += " active";
+            });
+        }
+    </script>
+
+    <script type="text/javascript " src="../js/scripts.js ">
+    </script>
+
+    <!-- <script type="text/javascript ">
+        // Script to show/hide search
+        function toggleSearchView() {
+            var search_field = document.getElementById("search-area ");
+            if (search_field.style.display === "none ") {
+                search_field.style.display = "block ";
+            } else {
+                search_field.style.display = "none ";
+            }
+        }
+    </script> -->
+
+</body>
+
+</html>
